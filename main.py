@@ -1,22 +1,28 @@
 import discord
 from discord.ext import commands
-from webserver import keep_alive
-import os
-import time
 
 bot = commands.Bot(command_prefix="!") 
 
 @bot.event
 async def on_connect():
-  print ("Your Bot!")
-  await bot.change_presence(status=discord.Status.do_not_disturb,activity=discord.Game('Your Bot!'))
-  
+  print ("Bot has started!")
+  await bot.change_presence(status=discord.Status.online,activity=discord.Game('Video Testing!'))
+
 #commands
 @bot.command()
 async def test(ctx):
-  await ctx2.send ("Test Back!")
+  await ctx.send ("Test Back!")
 
+@bot.command()
+async def hello(ctx):
+  await ctx.send ("How are you!")
 
+@bot.command()
+async def github(ctx):
+  await ctx.send ("https://github.com/DevDodger/Discord-bot/blob/main/main.py")
 
-TOKEN = os.environ.get("DISCORD_BOT_SECRET")
+#DO NOT TOUCH!
 
+TOKEN = "ur token"
+
+bot.run(TOKEN)
