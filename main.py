@@ -8,7 +8,7 @@ bot = commands.Bot(command_prefix="!")
 
 @bot.event
 async def on_connect():
-  print ("GUSD bot has started!")
+  print ("Your Bot!")
   await bot.change_presence(status=discord.Status.do_not_disturb,activity=discord.Game('Your Bot!'))
   
 #commands
@@ -18,7 +18,5 @@ async def test(ctx):
 
 
 
-
-keep_alive()
 TOKEN = os.environ.get("DISCORD_BOT_SECRET")
-bot.run(TOKEN)
+
